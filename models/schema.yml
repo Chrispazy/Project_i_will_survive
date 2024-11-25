@@ -1,0 +1,12 @@
+# schema.yml
+
+version : 2
+
+sources:
+  - name: project_i_will_survive
+    tables:
+      - name: Comorbidites
+      - name: Indice_imc
+      - name: cholesterol_stats
+      - name: diabete_stats
+      - name: effectifs_ as_pathologies
