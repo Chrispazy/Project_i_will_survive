@@ -6,6 +6,7 @@ sources:
   - name: project_i_will_survive
     tables:
       - name: Comorbidites
+        identifier: Comorbidites
       - name: Indice_imc
       - name: cholesterol_stats
       - name: diabete_stats

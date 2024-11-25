@@ -25,8 +25,8 @@ renamed as (
         libelle_classe_age,
         libelle_sexe,
         tri
-
-    from source
+        
+    from {{ source('project_i_will_survive', 'effectifs_ as_pathologies') }}
 
 )
 
