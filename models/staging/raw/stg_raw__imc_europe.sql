@@ -2,15 +2,15 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'imc') }}
+    select * from {{ source('raw', 'imc_europe') }}
 
 ),
 
 renamed as (
 
     select
-        dataflow,
-        last update,
+        data_flow,
+        last_update,
         freq,
         unit,
         bmi,

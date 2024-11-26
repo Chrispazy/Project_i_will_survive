@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('raw', 'comorbidites') }}
+    select * from {{ source('raw', 'comorbidites_fr') }}
 
 ),
 
@@ -13,7 +13,7 @@ renamed as (
         patho_niv1,
         patho_niv2,
         patho_niv3,
-        top,
+        top_,
         comorbidite,
         libelle_comorbidite,
         region,
@@ -24,7 +24,7 @@ renamed as (
         patho_niv2_comorb,
         patho_niv3_comorb,
         patho_niv1_comorb,
-        niveau prioritaire
+        niveau_prioritaire
 
     from source
 

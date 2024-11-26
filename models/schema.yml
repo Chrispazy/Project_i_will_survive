@@ -6,8 +6,8 @@ sources:
   - name: raw
     schema: project_i_will_survive
     tables:
-      - name: comorbidites
-        identifier: Comorbidites
+      - name: comorbidites_fr
+        identifier: comorbidites_associees_fr
         description: Comorbidités associées à chaque pathologie
         #columns:
          # - name: date_date
@@ -16,8 +16,8 @@ sources:
          # - unique:
           #    column_name: "(orders_id || '_' || pdt_id)"
 
-      - name: imc
-        identifier: Indice_imc
+      - name: imc_europe
+        identifier: imc_europe
         description: Listing des IMC à travers l'europe
        # columns:
          # - name: products_id
@@ -26,8 +26,8 @@ sources:
            #   - unique
             #  - not_null
 
-      - name: cholesterol
-        identifier: cholesterol_stats
+      - name: cholesterol_europe
+        identifier: cholesterol_europe
         description: Listing des taux de cholesterol à travers l'europe
         #columns:
          # - name: orders_id
@@ -36,8 +36,8 @@ sources:
             #  - unique
              # - not_null
 
-      - name: diabete
-        identifier: diabete_stats
+      - name: diabete_europe
+        identifier: diabete
         description: Listing des taux de diabète à travers l'europe
       #  columns:
        #   - name: date_date
@@ -59,8 +59,8 @@ sources:
           #    column_name: "(date_date || '_' || campaign_key)"
 
  
-      - name: pathologies
-        identifier: effectifs_ as_pathologies
+      - name: pathologies_fr
+        identifier: effectifs_pathologies_fr
         description: Listing de différentes pathologies
         #columns:
          # - name: date_date
