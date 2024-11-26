@@ -1,13 +1,137 @@
 # schema.yml
 
-version : 2
+version: 2
 
 sources:
-  - name: project_i_will_survive
+  - name: raw
+    schema: project_i_will_survive
     tables:
-      - name: Comorbidites
+      - name: comorbidites
         identifier: Comorbidites
-      - name: Indice_imc
-      - name: cholesterol_stats
-      - name: diabete_stats
-      - name: effectifs_ as_pathologies
+        description: Comorbidités associées à chaque pathologie
+        #columns:
+         # - name: date_date
+          #  description: date of purchase
+        #tests:
+         # - unique:
+          #    column_name: "(orders_id || '_' || pdt_id)"
+
+      - name: imc
+        identifier: Indice_imc
+        description: Listing des IMC à travers l'europe
+       # columns:
+         # - name: products_id
+        #    description: Primary Key
+          #  tests:
+           #   - unique
+            #  - not_null
+
+      - name: cholesterol
+        identifier: cholesterol_stats
+        description: Listing des taux de cholesterol à travers l'europe
+        #columns:
+         # - name: orders_id
+          #  description: identifiant de commande
+           # tests:
+            #  - unique
+             # - not_null
+
+      - name: diabete
+        identifier: diabete_stats
+        description: Listing des taux de diabète à travers l'europe
+      #  columns:
+       #   - name: date_date
+        #    description: date
+         # - name: paid_source
+          #  description: site
+          #- name: campaign_key
+           # description: code de numéro de campagne
+          #- name: campgn_name
+           # description: nom codé de la campagne
+          #- name: ads_cost
+           # description: prix de la campagne pub
+          #- name: impression
+           # description: nombre d'impression
+          #- name: click
+           # description: nombre de click
+        #tests:
+         # - unique:
+          #    column_name: "(date_date || '_' || campaign_key)"
+
+ 
+      - name: pathologies
+        identifier: effectifs_ as_pathologies
+        description: Listing de différentes pathologies
+        #columns:
+         # - name: date_date
+          #  description: date
+         # - name: paid_source
+          #  description: site
+          #- name: campaign_key
+           # description: code de numéro de campagne
+          #- name: campgn_name
+           # description: nom codé de la campagne
+          #- name: ads_cost
+           # description: prix de la campagne pub
+          #- name: impression
+           # description: nombre d'impression
+          #- name: click
+           #description: nombre de click
+       # tests:
+        #  - unique:
+         #     column_name: "(date_date || '_' || campaign_key)"
+
+# Génération des différents models intermédiaires en cas de besoins
+#models:
+ # - name: int_orders_margin
+  #  description: table intermediaire des orders margins, fait à partir de la table sales
+   # columns:
+    #  - name: orders_id
+     #   tests:
+      #    - unique
+       #   - not_null
+          
+  #- name: int_orders_operational
+   # description: table intermediaire faite à partir des stg_raw_ship
+    #columns:
+     # - name: orders_id
+      #  tests:
+       #  - unique
+        # - not_null
+
+  #- name: int_sales_margin
+   # description: table intermediaire faite à partir des stg_raw_sales et stg_raw_product
+    #tests:
+     # - unique:
+      #    column_name: "(orders_id || '_' || products_id)"
+
+  #- name: finance_days
+   # description: table finale présentée aux équipes BI finance
+    #columns:
+     # - name: date_date
+      #  tests:
+       #   - unique
+        #  - not_null
+
+  #- name: int_campaigns
+   # description: table intermediaire faite à partir des fichiers brut de chaque marques publicitaires
+    #tests:
+     # - unique:
+      #    column_name: "(date_date || '_' || campaign_key)"
+
+#  - name: int_campaigns_day
+ #   description: view des aggrégations par jour des clicks / impressions / coûts des pubs
+  #  columns:
+   #   - name: date_date
+    #    tests:
+     #     - unique
+      #    - not_null
+
+  #- name: finance_campaigns_day
+  #  description: table de la jointure int_campaigns_day et finance_days
+   # columns:
+    #  - name: date_date
+     #   tests:
+      #    - unique
+       #   - not_null
+

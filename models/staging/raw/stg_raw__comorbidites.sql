@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('project_i_will_survive', 'Comorbidites') }}
+    select * from {{ source('raw', 'comorbidites') }}
 
 ),
 
