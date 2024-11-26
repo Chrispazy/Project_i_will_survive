@@ -1,0 +1,58 @@
+# stg_raw.yml
+
+version: 2
+
+# Génération des différents models intermédiaires en cas de besoins de jointures
+#models:
+ # - name: int_orders_margin
+  #  description: table intermediaire des orders margins, fait à partir de la table sales
+   # columns:
+    #  - name: orders_id
+     #   tests:
+      #    - unique
+       #   - not_null
+          
+  #- name: int_orders_operational
+   # description: table intermediaire faite à partir des stg_raw_ship
+    #columns:
+     # - name: orders_id
+      #  tests:
+       #  - unique
+        # - not_null
+
+  #- name: int_sales_margin
+   # description: table intermediaire faite à partir des stg_raw_sales et stg_raw_product
+    #tests:
+     # - unique:
+      #    column_name: "(orders_id || '_' || products_id)"
+
+  #- name: finance_days
+   # description: table finale présentée aux équipes BI finance
+    #columns:
+     # - name: date_date
+      #  tests:
+       #   - unique
+        #  - not_null
+
+  #- name: int_campaigns
+   # description: table intermediaire faite à partir des fichiers brut de chaque marques publicitaires
+    #tests:
+     # - unique:
+      #    column_name: "(date_date || '_' || campaign_key)"
+
+#  - name: int_campaigns_day
+ #   description: view des aggrégations par jour des clicks / impressions / coûts des pubs
+  #  columns:
+   #   - name: date_date
+    #    tests:
+     #     - unique
+      #    - not_null
+
+  #- name: finance_campaigns_day
+  #  description: table de la jointure int_campaigns_day et finance_days
+   # columns:
+    #  - name: date_date
+     #   tests:
+      #    - unique
+       #   - not_null
+

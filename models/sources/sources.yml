@@ -61,27 +61,52 @@ sources:
  
       - name: pathologies_fr
         identifier: effectifs_pathologies_fr
-        description: Listing de différentes pathologies
-        #columns:
-         # - name: date_date
-          #  description: date
-         # - name: paid_source
-          #  description: site
-          #- name: campaign_key
-           # description: code de numéro de campagne
-          #- name: campgn_name
-           # description: nom codé de la campagne
-          #- name: ads_cost
-           # description: prix de la campagne pub
-          #- name: impression
-           # description: nombre d'impression
-          #- name: click
-           #description: nombre de click
+        description: Effectifs_ as_pathologies_effectif_de_patients_par_pathologie_sexe_classes_age_territoire 
+        columns:
+          - name: patho_niv1
+            description: cartographie / détail de niveau 1 pathologies des patients -
+              1. maladies cardioneurovasculaires
+              2. traitements du risque vasculaire (hors pathologies)
+              3. diabète
+              4. cancers
+              5. pathologies psychiatriques
+              6. traitements psychotropes (hors pathologies)
+              7. maladies neurologiques
+              8. maladies respiratoires chroniques (hors mucoviscidose)
+              9. maladies inflammatoires ou rares ou infection VIH
+              10. insuffisance rénale chronique terminale
+              11. maladies du foie ou du pancréas (hors mucoviscidose)
+              12. affections de longue durée (dont 31 et 32) pour d'autres causes
+              13. hospitalisation pour Covid-19 (à partir de 2020)
+              14. maternité (avec ou sans pathologies)
+              15. traitement antalgique ou anti-inflammatoire (hors pathologies, traitements, maternité ou hospitalisations)
+              16. hospitalisations hors pathologies repérées (avec ou sans pathologies, traitements ou maternité)
+          - name: patho_niv2
+            description: cartographie / détail de niveau 2 des pathologies des patients 
+          - name: patho_niv3
+            description: cartographie / détail de niveau 3 des pathologies des patients 
+          - name: cla_age_5
+            description: répartition en 20 classes d’âge (séparation tous les 5 ans)
+          - name: dept
+            description: numéro de département
+          - name: Ntop
+            description: effectif de patients pris en charge pour la pathologie (ou traitement chronique ou épisode de soins) dont il est question
+          - name: Npop
+            description: population de référence qui est celle de la cartographie des pathologies et des dépenses de l’Assurance Maladie
+          - name: prev
+            description: prévalence de patients pris en charge pour la pathologie (ou traitement chronique ou épisode de soins) dont il est question
+          - name: Niveau prioritaire
+            description: niveau de priorité (1, 2 et 3)
+          - name: libelle_classe_age
+            description: répartition en 20 classes d’âge (séparation tous les 5 ans)
+          - name: libelle_sexe
+            description: distinction en hommes, femmes et tous sexes
+
        # tests:
         #  - unique:
          #     column_name: "(date_date || '_' || campaign_key)"
 
-# Génération des différents models intermédiaires en cas de besoins
+# Génération des différents models intermédiaires en cas de besoins de jointures
 #models:
  # - name: int_orders_margin
   #  description: table intermediaire des orders margins, fait à partir de la table sales
